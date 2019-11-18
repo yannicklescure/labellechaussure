@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     resources :purchases, only: %i[new create]
   end
   resources :purchases, only: %i[show destroy]
+
+  get "users/:id", to: "users#index" as: "user"
 end
