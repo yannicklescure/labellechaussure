@@ -1,0 +1,36 @@
+/* Sticky Footer Classes */
+
+html, body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+.footer_icons a {
+  color: white;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 0px 10px;
+}
+.footer_icons a:hover {
+  opacity: 1;
+}
+.footer_text .fa-heart {
+  color: #D23333;
+}
+
+.footer_text {
+  margin-right: 20px;
+  font-size:12px;
+}
+
+.footer_icons {
+margin-left: 12px;
+}
