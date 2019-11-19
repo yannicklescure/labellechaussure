@@ -1,6 +1,8 @@
+# Gemfile
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'pundit'
 gem 'devise'
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
