@@ -12,11 +12,9 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= render "shared/footer" %>
   </body>
-  <footer>
-    <%= render 'shared/footer' %>
-  </footer>
 </html>
