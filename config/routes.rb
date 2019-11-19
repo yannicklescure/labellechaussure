@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
   resources :purchases, only: %i[index show destroy]
 
-  get "users/:id", to: "users#index" as: "user"
+  get "users/:id", to: "users#index", as: "user"
 end
