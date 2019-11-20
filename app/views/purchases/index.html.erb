@@ -2,5 +2,14 @@
 <p>Find me in app/views/purchases/index.html.erb</p>
 <hr>
 <% @purchases.each do |purchase| %>
+<%= p purchase %>
+  <% product = Product.find(purchase.product_id) %>
+  <%=img src = product.fake_photo %>
+  <%= product.title %>
+  <%= product.price %>
+  <%= product.description %>
+  <%= product.price %>
+  <%= product.users.first_name %>
   <p><%= purchase.done %></p>
 <% end %>
+
