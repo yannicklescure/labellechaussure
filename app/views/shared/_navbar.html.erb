@@ -22,8 +22,10 @@
       <li class="nav-item active">
         <% unless user_signed_in? %>
           <%= link_to "Login", new_user_session_path, class: 'btn btn-secondary btn-sm' %>
+        <% else %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-alert btn-sm' %>
         <% end %>
-        <%= link_to "Start Selling", new_user_session_path, class: 'btn btn-outline-secondary btn-sm' %>
+        <%= link_to "Start Selling", new_product_path, class: 'btn btn-outline-secondary btn-sm' %>
       </li>
     </ul>
   </div>
