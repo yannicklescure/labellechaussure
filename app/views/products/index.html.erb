@@ -2,4 +2,5 @@
 <hr>
 <% @products.each do |product| %>
   <p><%= product.title %></p>
+  <img src="<%= product.fake_photo %>" alt="<%= product.title %>" />
 <% end %>

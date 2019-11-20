@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_230841) do
+ActiveRecord::Schema.define(version: 2019_11_20_163549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_230841) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "size"
+    t.string "fake_photo"
     t.index ["color_id"], name: "index_products_on_color_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_230841) do
     t.string "country"
     t.string "state"
     t.string "zip"
+    t.boolean "confirm", default: false
     t.index ["product_id"], name: "index_purchases_on_product_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
