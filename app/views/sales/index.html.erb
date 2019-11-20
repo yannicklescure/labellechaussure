@@ -1,2 +1,11 @@
 <h1>Sales#index</h1>
 <p>Find me in app/views/sales/index.html.erb</p>
+<% @sales.each do |sale| %>
+  <% if policy(sale).show? %>
+    <% command = Purchase.where(product_id: sale.id) %>
+    <hr>
+    <p>purchases by: <%= command.size.positive? ? command[0].user.id : 'no one' %><br>
+    purchase done?: <%= command.size.positive? ? command[0].done : false %><br>
+    purchase confirm?: <%= command.size.positive? ? command[0].confirm : false %></p>
+  <% end %>
+<% end %>
