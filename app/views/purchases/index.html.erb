@@ -16,7 +16,7 @@
           <p><%= product.user.first_name %></p>
         </div>
         <div>
-          <%= link_to "cancel", "#"  %> <%= link_to "show", "#"  %>
+          <%= link_to "cancel", "#"  %> <%= link_to "show", purchase_path(purchase)  %>
         </div>
     <p><%= purchase.done = "purchased" %></p>
       </div>
