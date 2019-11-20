@@ -2,5 +2,7 @@
 <p>Find me in app/views/purchases/index.html.erb</p>
 <hr>
 <% @purchases.each do |purchase| %>
-  <p><%= purchase.done %></p>
+  <% if policy(purchase).show? %>
+   <p><%= purchase.done %></p>
+  <% end %>
 <% end %>
