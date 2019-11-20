@@ -8,6 +8,11 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.find(params[:id])
   end
 
+  def new
+    @purchase = Purchase.new
+    @product = Product.find(params[:product_id])
+  end
+
   def create
     @purchase = Purchase.new(purchase_params)
     # @product = Product.find(params[:product_id])
@@ -23,9 +28,20 @@ class PurchasesController < ApplicationController
     end
   end
 
-  def new
-    @purchase = Purchase.new
-    @product = Product.find(params[:product_id])
+  def edit
+    @purchase = Purchase.find(params[:id])
+    @purchase.update(purchase_params)
+    authorize @purchase
+  end
+
+  def update
+    @purchase = Product.find(params[:id])
+    authorize @purchase
+    if @purchase.update(purchase_params)
+      redirect_to purchase_path(@purchase)
+    else
+      render :edit
+    end
   end
 
   def destroy
