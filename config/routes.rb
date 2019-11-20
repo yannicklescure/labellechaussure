@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :sales, only: %i[index show]
 
-  get "users/:id", to: "users#index", as: "user"
+  get "users/:id", to: "users#index", as: "user_products"
 end
