@@ -168,8 +168,8 @@ products_attributes = [
     user_id: User.all[1].id,
     fake_photo: 'https://c.static-nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/qxrb9vyz3zfrojal8enj/chaussure-de-basketball-kobe-iv-protro-801pHj.jpg'
   }
-
 ]
+
 Product.create!(products_attributes)
 
 # <img src"<%= product.fake_photo %>" alt="<%= product.title %>" />

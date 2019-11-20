@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     # @product.color = Color.find(params[:color_id])
     @product.user = current_user
-    # raise
+
     authorize @product
     if @product.save
       redirect_to sales_path
@@ -39,6 +39,12 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     authorize @product
+
+    if @product.update(product_params)
+      redirect_to product_path(@product)
+    else
+      render :edit
+    end
   end
 
   def destroy
