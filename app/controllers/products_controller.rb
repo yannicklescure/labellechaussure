@@ -19,10 +19,11 @@ class ProductsController < ApplicationController
   def create
     @colors = Color.all
     @product = Product.new(product_params)
+    # @product.color = Color.find(params[:color_id])
     @product.user = current_user
     authorize @product
     if @product.save
-      redirect_to user_products_path
+      redirect_to sales_path
     else
       render :new
     end
@@ -54,6 +55,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :model, :size, :brand, :year)
+    params.require(:product).permit(:title, :description, :color_id, :price, :model, :size, :brand, :year)
   end
 end

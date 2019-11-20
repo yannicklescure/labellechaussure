@@ -6,24 +6,26 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
   end
 
   def show?
-    return true
+    true
   end
 
   def update?
-    return user_is_owner?
+    # user_is_owner? || user.admin
+    user_is_owner?
   end
 
   def destroy?
-    return user_is_owner?
+    # user_is_owner? || user.admin
+    user_is_owner?
   end
 
   private
 
   def user_is_owner?
-    return record.user == user
+    record.user == user
   end
 end
