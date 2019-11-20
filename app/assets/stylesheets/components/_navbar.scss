@@ -8,5 +8,14 @@
 }
 
 .navbar-lewagon .navbar-brand img {
+  display: flex;
   width: 40px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: flex-end;
+    .far {
+      padding-bottom: 7px;
+    }
 }
