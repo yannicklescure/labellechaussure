@@ -1,0 +1,14 @@
+<%= simple_form_for @product do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :title %>
+    <%= f.input :brand %>
+    <%= f.input :model %>
+    <%= f.association :color %>
+    <%= f.input :size, collection: (6..15) %>
+    <%= f.input :year, collection: (1955..2019) %>
+    <%= f.input :description, as: :text  %>
+    <%= f.input :price %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit, "Add your product", class: "btn btn-secondary" %>
+<% end %>
