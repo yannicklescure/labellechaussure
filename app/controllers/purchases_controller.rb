@@ -1,11 +1,13 @@
 class PurchasesController < ApplicationController
 
   def index
-    @purchases = Purchase.all
+    # @purchases = Purchase.all
+    @purchases = policy_scope(Purchase)
   end
 
   def show
     @purchase = Purchase.find(params[:id])
+    authorize @purchase
   end
 
   def create
@@ -14,6 +16,7 @@ class PurchasesController < ApplicationController
     # @purchase.product = @product
     @purchase.user = current_user
     @purchase.done = true
+    authorize @purchase
     if @purchase.save
       # raise
       redirect_to purchases_path
@@ -26,11 +29,13 @@ class PurchasesController < ApplicationController
   def new
     @purchase = Purchase.new
     @product = Product.find(params[:product_id])
+    authorize @purchase
   end
 
   def destroy
     @purchase = Purchase.find(params[:id])
     @purchase.destroy
+    authorize @purchase
     redirect_to purchases_path
   end
 

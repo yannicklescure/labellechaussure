@@ -1,26 +1,31 @@
 class ProductsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @products = Product.all
+    # @products = Product.all
+    @products = policy_scope(Product)
   end
 
   def show
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
     @colors = Color.all
     @product = Product.new(product_params)
+    # @product.color = Color.find(params[:color_id])
     @product.user = current_user
+    # raise
+    authorize @product
     if @product.save
       redirect_to sales_path
     else
-      raise
       render :new
     end
   end
@@ -28,15 +33,18 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @product.update(product_params)
+    authorize @product
   end
 
   def update
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def destroy
     @product = Purchase.find(params[:id])
     @product.destroy
+    authorize @product
     redirect_to user_products_path
   end
 

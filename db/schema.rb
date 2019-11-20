@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_163521) do
     t.datetime "updated_at", null: false
     t.string "size"
     t.string "photo"
+    t.string "fake_photo"
     t.index ["color_id"], name: "index_products_on_color_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_163521) do
     t.string "country"
     t.string "state"
     t.string "zip"
+    t.boolean "confirm", default: false
     t.index ["product_id"], name: "index_purchases_on_product_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
