@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
   <a class="navbar-brand" href="#">
-    <%= link_to raw('<i class="fas fa-shoe-prints"></i> La Belle Chaussure'), "#", class: "navbar-brand"  %>
+    <%= link_to raw('<i class="fas fa-shoe-prints"></i> La Belle Chaussure'), root_path, class: "navbar-brand"  %>
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,8 @@
         <i class="far fa-bell"></i>
       </li>
       <li class="nav-item active">
-        <button type="button" class="btn btn-outline-secondary btn-sm">Start Selling</button>
+        <%= link_to "Login", new_user_session_path, class: 'btn btn-secondary btn-sm' %>
+        <%= link_to "Start Selling", new_user_session_path, class: 'btn btn-outline-secondary btn-sm' %>
       </li>
     </ul>
   </div>

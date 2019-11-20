@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_163521) do
 
   create_table "purchases", force: :cascade do |t|
     t.integer "rating"
-    t.boolean "done", default: false
+    t.boolean "done"
     t.bigint "product_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
