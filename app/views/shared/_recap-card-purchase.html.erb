@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="<%= @product.fake_photo %>" alt="<%= @product.title %>">
+  <div class="card-body">
+    <h5 class="card-title"><%= @product.title %></h5>
+    <p class="card-text text-muted">Model: <%= @product.model %></p>
+    <p class="card-text text-muted">Brand: <%= @product.brand %></p>
+    <p class="card-text text-muted">Size: <%= @product.size %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Price: <%= @product.price %></strong></li>
+  </ul>
+</div>
