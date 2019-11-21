@@ -9,7 +9,7 @@
 <hr>
   <div class="row justify-content-between">
     <div class="col-sm-6">
-      <img src="<%= @product.fake_photo %>" class="card-img" alt="<%= @product.title %>">
+      <img src="<%= @product.fake_photo %>" class="img" alt="<%= @product.title %>">
     </div>
 
     <div class="col-sm-6">
@@ -24,7 +24,7 @@
         <p class="card-text small"> Size: <strong><%= @product.size%></strong> </p>
 
 <div class="row justify-content-center">
-      <%= link_to "Buy now", new_product_purchase_path(@product), class: "btn btn-primary"  %>
+      <%= link_to "Buy now", new_product_purchase_path(@product), class: "btn btn-secondary"  %>
 
 </div>
       </div>
