@@ -7,7 +7,7 @@
     </div>
   </div>
 <hr>
-  <div class="row">
+  <div class="row justify-content-between">
     <div class="col-sm-6">
       <img src="<%= @product.fake_photo %>" class="card-img" alt="<%= @product.title %>">
     </div>
@@ -23,10 +23,12 @@
         <p class="card-text small">Color: <strong><%= @product.color_id%></strong> </p>
         <p class="card-text small"> Size: <strong><%= @product.size%></strong> </p>
 
-
-      <%= link_to "Back", root_path, class: "btn btn-secondary"  %>
+<div class="row justify-content-center">
       <%= link_to "Buy now", new_product_purchase_path(@product), class: "btn btn-primary"  %>
+
+</div>
       </div>
     </div>
+      <%= link_to "Back", root_path, class: "btn btn-link" %>
   </div>
 </div>
