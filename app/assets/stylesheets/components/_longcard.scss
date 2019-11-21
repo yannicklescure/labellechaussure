@@ -1,15 +1,23 @@
+$card-product-height: 175px;
+
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: $card-product-height;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid #cccccc;
+  }
 }
 
 .card-product img {
-  height: 100%;
-  width: 120px;
+  height:  $card-product-height;
+  width:  $card-product-height;
   object-fit: cover;
 }
 
@@ -29,4 +37,5 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  width: calc(100% - 175px);
 }

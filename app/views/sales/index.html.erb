@@ -1,12 +1,30 @@
-<h1>Sales#index</h1>
-<p>Find me in app/views/sales/index.html.erb</p>
-<% @sales.reverse.each do |sale| %>
-  <% if policy(sale).show? %>
-    <% command = Purchase.where(product_id: sale.id) %>
-    <hr>
-    <p> title: <%= sale.title %>
-      <br>purchases by: <%= command.size.positive? ? command[0].user.id : 'no one' %><br>
-    purchase done?: <%= command.size.positive? ? command[0].done : false %><br>
-    purchase confirm?: <%= command.size.positive? ? command[0].confirm : false %></p>
+<div class="container" >
+  <!-- <h1>Sales#index</h1> -->
+  <!-- <p>Find me in app/views/sales/index.html.erb</p> -->
+  <hr>
+  <div class="row justify-content-center">
+    <% @sales.reverse.each do |product| %>
+      <% if policy(product).show? %>
+      <% command = Purchase.where(product_id: product.id) %>
+
+  <div class="card-product mb-3 p-0 col-10 col-lg-8">
+    <%= cl_image_tag "product.photo", alt: product.title %>
+    <div class="card-product-infos p-3">
+      <div class="h3"><%= product.title %></div>
+      <hr>
+      <span class ="h3"><span><i class="fas fa-dollar-sign"></i></span><%= product.price %></span>
+      <span><span class="h5"><i class="far fa-user"></i></span> <%= command.size.positive? ? command[0].user.id : 'no one' %></span>
+      <!-- <p>purchase done?: <%= command.size.positive? ? command[0].done : false %></p> -->
+      <% if command.size.positive? && command[0].confirm %>
+        <p>confirmed: <i class="fas fa-check"></i></p>
+      <% else %>
+        <p>confirmed: <i class="fas fa-truck-loading"></i></p>
+      <% end %>
+    </div>
+  </div>
   <% end %>
 <% end %>
+</div>
+</div>
+
+<strong></strong>
