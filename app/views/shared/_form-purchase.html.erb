@@ -55,7 +55,7 @@
   <div class="row">
     <div class="col-md-6 mb-3">
       <label for="cc-name">Name on card</label>
-      <input type="text" class="form-control" id="cc-name" placeholder="Bob Sponge" required>
+      <input type="text" class="form-control" id="cc-name" value="Bob Sponge" required>
       <small class="text-muted">Full name as displayed on card</small>
       <div class="invalid-feedback">
         Name on card is required
@@ -63,7 +63,7 @@
     </div>
     <div class="col-md-6 mb-3">
       <label for="cc-number">Credit card number</label>
-      <input type="text" class="form-control" id="cc-number" placeholder="3123 4567 8990 9999 2345" required>
+      <input type="text" class="form-control" id="cc-number" value="3123 4567 8990 9999 2345" required>
       <div class="invalid-feedback">
         Credit card number is required
       </div>
@@ -72,19 +72,19 @@
   <div class="row">
     <div class="col-md-3 mb-3">
       <label for="cc-expiration">Expiration</label>
-      <input type="text" class="form-control" id="cc-expiration" placeholder="12/22" required>
+      <input type="text" class="form-control" id="cc-expiration" value="12/22" required>
       <div class="invalid-feedback">
         Expiration date required
       </div>
     </div>
     <div class="col-md-3 mb-3">
       <label for="cc-cvv">CVV</label>
-      <input type="text" class="form-control" id="cc-cvv" placeholder="666" required>
+      <input type="text" class="form-control" id="cc-cvv" value="666" required>
       <div class="invalid-feedback">
         Security code required
       </div>
     </div>
   </div>
   <hr class="mb-4">
-  <%= f.button :submit, "Continue to checkout", class: "btn-primary" %>
+  <%= f.button :submit, "Send request", class: "btn-primary" %>
 <% end %>
