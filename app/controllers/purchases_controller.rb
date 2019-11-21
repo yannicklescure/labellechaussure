@@ -17,13 +17,21 @@ class PurchasesController < ApplicationController
   end
 
   def create
+    @user = current_user
     @purchase = Purchase.new(purchase_params)
-    # @product = Product.find(params[:product_id])
-    # @purchase.product = @product
-    @purchase.user = current_user
+    @purchase.user = @user
     @purchase.done = true
     authorize @purchase
     if @purchase.save
+      @user.update(
+        first_name: @purchase.first_name,
+        last_name: @purchase.last_name,
+        address_1: @purchase.address_1,
+        address_2: @purchase.address_2,
+        country: @purchase.country,
+        state: @purchase.state,
+        zip: @purchase.zip
+      )
       redirect_to purchases_path
     else
       render :new

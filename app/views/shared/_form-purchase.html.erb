@@ -9,13 +9,14 @@
       <%= f.input :last_name, class: "form-control" %>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-6 mb-6">
+      <%= f.input :address_1, class: "form-control" %>
+    </div>
 
-  <div class="mb-3">
-    <%= f.input :address_1, class: "form-control" %>
-  </div>
-
-  <div class="mb-3">
-    <%= f.input :address_2, class: "form-control" %>
+    <div class="col-md-6 mb-6">
+      <%= f.input :address_2, class: "form-control" %>
+    </div>
   </div>
 
   <div class="row">
@@ -30,10 +31,6 @@
     </div>
   </div>
   <hr class="mb-4">
-  <div class="custom-control custom-checkbox mb-4">
-    <input type="checkbox" class="custom-control-input" id="same-address">
-    <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-  </div>
 
   <h4 class="mb-3">Payment</h4>
 
@@ -54,7 +51,7 @@
   <div class="row">
     <div class="col-md-6 mb-3">
       <label for="cc-name">Name on card</label>
-      <input type="text" class="form-control" id="cc-name" placeholder="" required>
+      <input type="text" class="form-control" id="cc-name" value="Bob Sponge" required>
       <small class="text-muted">Full name as displayed on card</small>
       <div class="invalid-feedback">
         Name on card is required
@@ -62,7 +59,7 @@
     </div>
     <div class="col-md-6 mb-3">
       <label for="cc-number">Credit card number</label>
-      <input type="text" class="form-control" id="cc-number" placeholder="" required>
+      <input type="text" class="form-control" id="cc-number" value="3123 4567 8990 9999 2345" required>
       <div class="invalid-feedback">
         Credit card number is required
       </div>
@@ -71,19 +68,20 @@
   <div class="row">
     <div class="col-md-3 mb-3">
       <label for="cc-expiration">Expiration</label>
-      <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+      <input type="text" class="form-control" id="cc-expiration" value="12/22" required>
       <div class="invalid-feedback">
         Expiration date required
       </div>
     </div>
     <div class="col-md-3 mb-3">
       <label for="cc-cvv">CVV</label>
-      <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+      <input type="text" class="form-control" id="cc-cvv" value="666" required>
       <div class="invalid-feedback">
         Security code required
       </div>
     </div>
   </div>
   <hr class="mb-4">
+  <%= f.hidden_field :product_id, value: @product.id %>
   <%= f.button :submit, "Continue to checkout", class: "btn-primary" %>
 <% end %>
