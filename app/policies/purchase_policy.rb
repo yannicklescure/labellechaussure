@@ -13,6 +13,11 @@ class PurchasePolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    # user_is_owner? || user.admin
+    user_is_owner?
+  end
+
   def update?
     # user_is_owner? || user.admin
     user_is_owner?
