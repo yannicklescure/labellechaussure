@@ -1,21 +1,22 @@
-class ProductPolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def create?
+  def show?
     true
   end
 
-  def show?
+  def information?
     true
   end
 
   def edit?
     # user_is_owner? || user.admin
-    user_is_owner?
+    # user_is_owner?
+    true
   end
 
   def update?
@@ -23,14 +24,11 @@ class ProductPolicy < ApplicationPolicy
     user_is_owner?
   end
 
-  def destroy?
-    # user_is_owner? || user.admin
-    user_is_owner?
-  end
-
   private
 
   def user_is_owner?
-    record.user == user
+    # record.user == user
+    record == user
+    # raise
   end
 end

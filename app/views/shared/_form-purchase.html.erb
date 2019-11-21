@@ -82,5 +82,6 @@
     </div>
   </div>
   <hr class="mb-4">
-  <%= f.button :submit, "Send request", class: "btn-primary" %>
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.button :submit, "Continue to checkout", class: "btn-primary" %>
 <% end %>

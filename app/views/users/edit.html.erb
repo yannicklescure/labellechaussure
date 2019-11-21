@@ -1,0 +1,27 @@
+<!--
+#<User
+id: 8,
+email: "yannick@email.com",
+created_at: "2019-11-20 21:45:14",
+updated_at: "2019-11-20 21:45:14",
+first_name: "yannick",
+last_name: nil,
+address_1: nil,
+address_2: nil,
+country: nil,
+state: nil,
+zip: nil>
+-->
+<div class="my-5">
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :address_1 %>
+    <%= f.input :address_2 %>
+    <%#= f.input :country %>
+    <%= f.input :country, as: :string %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+    <%= f.submit class: "btn btn-secondary" %>
+  <% end %>
+</div>
