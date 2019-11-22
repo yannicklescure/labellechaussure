@@ -1,2 +1,1 @@
-$("#all-cards").hide();
-$("#search-results").html("<%= escape_javascript(render :partial => 'results') %>");
+$("#search-results").html("<%= j render 'products/results', search_product: @search_product %>");
