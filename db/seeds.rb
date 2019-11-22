@@ -61,28 +61,40 @@ User.create!(users_attributes)
 puts 'Creating products...'
 products_attributes = [
   {
-    title: 'Brand new NIKE LEBRON 17',
+    title: 'Nike ISPA Joyride Envelope',
     brand: 'Nike',
-    model: 'NIKE LEBRON 17',
+    model: 'Nike Joyride',
     year: '2019',
-    size: '10',
-    description: 'Overpriced shoes',
+    size: '12',
+    description: 'Nike ISPA continues to cut against the grain with its latest releases and the Joyride Envelope is the purest testament to that',
+    price: '300',
+    color_id: Color.all[1].id,
+    user_id: User.all[1].id,
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574442334/BV4584-PREM_400_A_hd_1600_nt6jtf.png'
+  },
+  {
+    title: 'Stars Wars Edition Adidas',
+    brand: 'Adidas',
+    model: 'Adidas x Star_wars',
+    year: '2016',
+    size: '16',
+    description: 'The force is strong with the new Stars Wars!',
     price: '200',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
-    fake_photo: 'https://www.kicksonfire.com/wp-content/uploads/2019/11/harlem-fashion-row-nike-lebron-17-hfr-6-681x463.jpg?x98166'
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574446455/STARS_WARS_x_Adidas_te2ycg.jpg'
   },
   {
-    title: 'Brand New Cortez',
+    title: 'Nike Air Max 720 ISPA',
     brand: 'Nike',
-    model: 'Cortez',
-    year: '2005',
-    size: '11',
-    description: 'A classic, in great condition',
-    price: '150',
+    model: 'Air Max 720 ISPA',
+    year: '2017',
+    size: '8',
+    description: 'retro-futuristic look, features one of the most tactical redesigns in the ISPA line to date, wear 3 times',
+    price: '400',
     color_id: Color.all[1].id,
     user_id: User.all[0].id,
-    fake_photo: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTDxIQEhMQEBASEBAQERARExIWFRAQFREXFhURExcYIDQgGBolGxcVITIhJyktLi4uGCAzODctNyo5LisBCgoKDg0NGxAQGzclHyI1KzM1LjctLi0uKy8uMCs3KzctLTc1OC8uLS0tNSstLi0tLS03LS03Kzg1Mi01LS0tLf/AABEIAPsAyQMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAAAgMEBQYHAQj/xABEEAACAQICBgUHBwoHAAAAAAAAAQIDEQQhBRIxQVFhBjJxgZEHIkJScqGxExQjM0NiwVNUgoOywtHS4fAVFkSEkpSi/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECBAMG/8QAKhEBAAICAQIDBwUAAAAAAAAAAAECAxEEEjEhQVETFCIygZGhBTNhcfH/2gAMAwEAAhEDEQA/AO0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACjicQoRcrTl92nFyk+xIhg8Xr3yUWna2vCTtZZvVbt2PgDS5AAAAAAAAB4megAAAAAAAAAAAAAAAAAeORCUue/duAm2QdTPZlx4lCrPzWp6qSd1nuS233PaUPlvVjle+s8l255vwAnisHGpZVLuN29TWahO+6aXWX3XlyJqMIJRjGMElZKMUklwVtiKUH60tbkso/xf95FRxTWWa4Paux7+xgXdOV0nxSZIo4ZrVSvmlZ7isAAAApV52y732FRs0Tyh9K40aU6NKV6004yaf1UWs816Vti537YmdQvjx2yWite8qXRTpW6+mcVRUm6DpatGN/N16LzlFc1KbvvUVwOgnz/AOTDEKGkFUkrqEZSdk3bWlCndJe3bvZ9AEVncNHNxRiy9MekAALMgAAAAAAjKaRB1gJSqxV7tZbeR6potLWk5ZPWtrXvsSat7yMq0Hkryz2Qu8779X8QLqrXUdt7cVdnk5cHYt9ab2RUfaefgv4oi6XrScuWxe7N97YE/nCWTevLfZfgtm8oYrEKEHOcoUKcVeUm15q57l7y30xpSnhaEq08oR2RilecnshFcX/V5I4t0m6Q18ZU1qj1YRbdOlFvUp/xlb0tu3Ysilr9LXxeJbPO+0ertuDxFOpCFWm9eM4qcJyTu09jSeceyyJ1GzBdCK6no7DNO+rBwezJxnKLT8DOstE7hnyV6bzX0Ws77j2niGidSJRlElRe08XfaXEcQuLXgYixQxeOp0o61ScYR4ylYDPvEr1vciEsSvXfconOtJ+ULD07qmpVpcso+Lz9xrFbpbj8ZL5LDxcb7qMW5JfeluXPIrN4a8fCy2jcxqPWfBvnT3S8adK8cXKFS31F1ecb9Zai1lbjsOUYhTrSUacqNRy6sYVqab35Qk1JdljZtFeT2pVlr4uq7u96dJqUr/em/NT7NbmdB0ToOjh4atOnCF1Z2V3L2pPN/DhYr0zady1V5FOLXWOeq39eH3/1xjASxOBrfKakqTcZU9aSUoSjJWausuD7UjvHQfSjxOj6FWTvNQ+SqPjUpvUcu+yl+kY/HYCnOLThB3TTyVmuDW9GV6KaKp4fDalJNQnOVXVbvquSSaXLzb95MV1LNyeVGeNzXVmYABdjACFaooxcnsim32ICGIxCjZb3sXLiy1WKctmzi9nct5hZV5Tm5t7d3BcEXVOsBkbLe9bt2eBTdJbnKK4J5d3DuKEapUVQCpGjHetb2m5fErqZbKZNSAr6xGZTUj3WA5p5VcY3iKVDPUhS+VtfJznKUbtclHLtZoFSR1Tyj6AlWhHEUlrVKUXCcVtlTvdNdl34nJqzzs8nwZnvE9T0f6fetsMRHkzHR7pTWwcnqNSpyacqUs4t5LWW9StlfsveyNww/lPpWWvQnF8ITjLwukcwkz1Qf95f3tXiItMOmbh4ck7tHi6nU8puH3Uqz7dRL3NmLxflNl9nh4rnObfuSRquC6M4qr1KFRp72tVbdqlKy95sej/JtVlZ1qkKayygnOXY9iXiy27yx2w8LH80/lisd06xlS6U40k/ycVfxlcxeG0fisXPJVazu05O7Sd81rPJPk2jqGjOg2FpZuDrS9aq01/wVovvTNip0FFJRSSS3JWt6qW5FuiZ7uM87Fj/AGafVo3R7yd042nifpZfk02qcfaazk+SsubRvGGwFOnFQjFKCz1IpRjfi4xyb5srC5eIiGDLnyZZ3eVRPhkRbIXIybJcUK0jO4CNqUF9xe9XMHGi20uLsu02KEbJLgkvAD0AACz0wl83q3dkoOWX3c7e4vCFakpRcZK8ZKzXFAabhsTG2UlwLiNZetHxReVujyjJyglJPdkmvwZQlQSyce5oCUJ9/YVVN8GWzwlN+iu7L4HnzOO5yXZJgXqqPgycavJmO+bS3VJ+LJKnUX2jAyKq8me/K8n4GOvW9YJ1vW+AGR13wfAxGP6M4erLWnRg29rtZ+KzPKuKmsnKf6MKsv2YlrW0vCPWnX/6+Kf7hPTM+SYvNfGJ0rUeh+Ejn8hB9rnJeDfN+JksLo6hS+rhRpexGEe+6NYrdJcOtrrv/b1/xiWNfpnho+jiH+qt+00WjDbyr+EWzzbvbf1b38rDfKPjcjLGU1vv2JnOqnT6l6NGs/acI/C5aS6e1H1MNFe1OUvhFHSONknycpzUjzdLnpCOxKXgtnieR0gt0Gcwl03xe6FCHZSn+9Iof5n0hJ+bOa5QoQ/lbOkcLJ6x91J5NP5dajiJP0Eu/wDoVbvkckWldKS2PGv2aDXwgSeC0rU2/PXylVlBeEpIn3PXe8K+877Vl1ickldtJcXZIxmJ0/hYO0sRQT3pVIt+CzOdU+hGNnnNU486tXWf/m5lMH5O39rXSW+NKPwlL+Uexw1+a/2hPtcs9qtnwnSTDVa0YUpupUvrK1Opbzc23Jq1jeTVejPRilQ+rg7O2vObvOdldJvhsyVkbUZr9O/g7O9OrXxdwAFFgjOLex6vcn8SQAsa+Fqvq13H9CLMXi9D4yWSxcLcJUU/xNiAGmy0BpFdXE4WWSXn0p7ny8CX+G6TX5hPb6VeO3Z6L2G4ADTXhtJr7DAvNbMVUWW9Z0t/u5nqhpLfhMK/P3Yt/V22Z0+tffsNxAGnqWkN+Cpdd7MXD6vO22PW2ctpJVcf+Yra9mKpdXd3m3ADUo18dlfAu9ne2JobdyV3s5k1Wxm/BT2LZXw+3f6ZtQA1hTxT/wBHVWb+1w3Vtl9ptINYrVv80qN6iaSrYfOpfON9fq7M/cjagBquriru2Eq21o2vWw6vFpazfn5NZ5b7LNbqkVicr4Wp12n9Nh8qedpLz85bPN3cXv2YAa5ThiXa+HlHN6301F2juatLN+FuZKFDE+bejFbdb6aOXC2Wfu7zYQBriw2My+iw681618RPKW5K1PNcyMsBjmslg4PVS69adpXzfUV1yNlAGs/4RjXtrYaOafm05uytszZcYbQ+Jjm8RTf6mL97ZngBZ0cNUXWrOXZCKLqEWtrb8CQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/Z'
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574445988/CD2182100_8_yz8z3i.jpg'
   },
   {
     title: 'Kobe shoes',
@@ -91,10 +103,10 @@ products_attributes = [
     year: '2017',
     size: '12',
     description: 'Those shoes were sold in 30 sc',
-    price: '3000',
+    price: '300',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
-    fake_photo: 'http://www.sneakereliteclub.com/Himages/chaussure-basketball-homme-nike-kobe-10-elite-low-mambacurial-black-black-wolf-grey-pink-flash-1788-2.jpg'
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574445628/kobe_shoes_jklw55.jpg'
   },
   {
     title: 'Brand New Cortez',
@@ -106,19 +118,7 @@ products_attributes = [
     price: '110',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
-    fake_photo: 'data:image/jpeg;base64,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'
-  },
-  {
-    title: 'Adidas Spezial And Liam Gallagher Create A New LG SPZL',
-    brand: 'Adidas',
-    model: 'Spezial Liam Gallagher',
-    year: '2019',
-    size: '11',
-    description: "You wanted to have Liam Gallagher's unique style? These shoes are finally is your chance to do so!",
-    price: '125',
-    color_id: Color.all[1].id,
-    user_id: User.all[1].id,
-    fake_photo: 'https://sneakernews.com/wp-content/uploads/2019/08/adidas-spezial-liam-gallagher-lg-spzl-5.jpg'
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574445628/cortez2_x5fhd0.jpg'
   },
   {
     title: 'Adidas Superstar in great condition',
@@ -130,7 +130,7 @@ products_attributes = [
     price: '100',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
-    fake_photo: 'https://www.footasylum.com/images/products/large/098726.jpg'
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574445629/superstar_xpd1qo.jpg'
   },
   {
     title: 'Adidas Superstar in great condition',
@@ -142,7 +142,7 @@ products_attributes = [
     price: '100',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
-    fake_photo: 'https://assets.adidas.com/images/w_600,f_auto,q_auto:sensitive,fl_lossy/ab12ced1d0a14151b88ea7fa00ee94a1_9366/Superstar_Foundation_Shoes_Black_B27140_01_standard.jpg'
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574442333/Nike_Air_Max_720_ISPA_White_Black_jfslkj.jpg'
   },
   {
     title: 'Adidas Spezial And Liam Gallagher Create A New LG SPZL',
@@ -154,28 +154,116 @@ products_attributes = [
     price: '125',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
-    fake_photo: 'https://sneakernews.com/wp-content/uploads/2019/08/adidas-spezial-liam-gallagher-lg-spzl-5.jpg'
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574445629/liamgallagher_ilvrug.jpg'
   },
   {
-    title: 'Kobe shoes',
-    brand: 'Nick',
-    model: 'Kobe',
-    year: '2017',
-    size: '12',
-    description: 'Those shoes were sold in 30 sc',
-    price: '3000',
+    title: "Yecheil Yeezy Boost 350 V2",
+    brand: "Adidas",
+    model: "Yeezy Boost 350 V2",
+    year: "2019",
+    size: "9",
+    description: "This is the Yeezy 350 V2 Yecheil, which is a bit more ‘lively’ than some of its predecessors. The shoe features red, white and black accents mixed across its Primeknit upper. A black sole finishes the bottom off the look.",
+    price: "200",
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
-    fake_photo: 'https://c.static-nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/qxrb9vyz3zfrojal8enj/chaussure-de-basketball-kobe-iv-protro-801pHj.jpg'
-  }
+    remote_photo_url: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/adidas-yeezy-350-v2-yecheil-fw5190-heel_w2wl5a.jpg"
+  },
+   {
+    title: "Fantastic ASICS Running Shoes",
+    brand: "ASICS",
+    model: "ASICS GEL-1090",
+    year: "2019",
+    size: "11",
+    description: "I bought those last month, but unfortunately, they are too big for me. The Gel-1090 made its first release back in 2004, posing itself as a more accessible alternative to the premium-priced Kayano running series. Boasting a sleek design with oodles of comfort, the model was an instant hit, now reimagined for 2019, the model adapts its bold and technical edge for the modern-day runner (or lifestyle wearer) with an aesthetic typical of that from the early ’00s, including plenty of mesh and eye catching silver overlays",
+    price: "75",
+    color_id: Color.all[2].id,
+    user_id: User.all[1].id,
+    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/https___hypebeast.com_image_2019_11_asics-gel-1090-silver-steel-grey-1021A285-100-release-date-1_urtehv.jpg"
+  },
+  {
+    title: "ASICS Onitsuka Tiger Ultimate 81 Baskets",
+    brand: "ASICS",
+    model: "Onitsuka Tiger",
+    year: "2017",
+    size: "11",
+    description: "Remember Kill Bill? This is the classy version of the Tiger Onitsuka. The classic look combined with comfort make it an ultimate casual shoe. The Ultimate 81 from Onitsuka Tiger will be the perfect addition to your wardrobe.",
+    price: "120",
+    color_id: Color.all[3].id,
+    user_id: User.all[3].id,
+    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/81BTtY6OzvL._AC_UX695__xbo7qc.jpg"
+  },
+  {
+    title: "Fantastic PUMA Suede Classic",
+    brand: "Puma",
+    model: "Suede Classic",
+    year: "1999",
+    size: "11",
+    description: "",
+    price: "90",
+    color_id: Color.all[4].id,
+    user_id: User.all[3].id,
+    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/352634_03_sv01_rlba6f.jpg"
+  },
+  {
+    title: "Good condition Puma Tazon 6 FM ",
+    brand: "Puma",
+    model: "Tazon",
+    year: "2015",
+    size: "9",
+    description: "A sleek, streamlined silhouette sets the PUMA tazon 6 shoe apart from the rest. This stylish sneaker sports a synthetic leather upper with midfoot saddle for maximum fit and comfort while eva in the heel absorbs impact.",
+    price: "80",
+    color_id: Color.all[2].id,
+    user_id: User.all[3].id,
+    photo: "https://res.cloudinary.com/sophiealexandre/image/upload/v1574443559/sneakers/60076-63_jglexr.png"
+  },
+  {
+    title: "Fila Disruptor II platform wedge sneakers for men",
+    brand: "Fila",
+    model: "Fila Disruptor",
+    year: "2019",
+    size: "11",
+    description: "Limited edition of the Fila Disruptor for men! Chunky retro-styled sneakers with a wedge lugged sole for a no-slip grip. Leather/synthetic upper Round toe Lace up Terry lining Padded insole.",
+    price: "350",
+    color_id: Color.all[3].id,
+    user_id: User.all[2].id,
+    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/36df44281d46ea16cccb84af1f9ad2ba_nzf3ly.jpg"
+  },
+  {
+    title: "V-RUN Mens North Sea Navy",
+    brand: "Vibram",
+    model: "V-Run",
+    year: "2019",
+    size: "9",
+    description: "The Ultimate Vibram Fivefingers V-RUN Barefoot Running shoe. This is an ideal running shoe for those making the transition from traditional to minimalist shoe. The thinner sole lets you feel your run, connecting you to the true barefoot running experience.",
+    price: "100",
+    color_id: Color.all[1].id,
+    user_id: User.all[0].id,
+    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445565/Vibram_Fivefingers_V-Run_Mens_North_Sea_Navy_1024x1024_uytolm_yp8llu.jpg"
+  },
+  {
+    title: "Fila Disruptor II platform Rainbow",
+    brand: "Fila",
+    model: "Fila Disruptor",
+    year: "2019",
+    size: "11",
+    description: "Limited edition of the Fila Disruptor with a twist! Those retro-styled sneakers are making a come back, with many colors!",
+    price: "350",
+    color_id: Color.all[3].id,
+    user_id: User.all[1].id,
+    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445513/FILA-Disruptor-II-Tie-Dye-Shoes-_313256-front-US_jvbxwp_n69tgm.jpg"
+  },
 ]
 
 Product.create!(products_attributes)
 
-# <img src"<%= product.fake_photo %>" alt="<%= product.title %>" />
+Purchase.create!(user: User.find_by(email: "pierre@email.com"), product: Product.first)
+Purchase.create!(user: User.find_by(email: "pierre@email.com"), product: Product.last)
+
+# <img src"<%= product.photo %>" alt="<%= product.title %>" />
 
 # url = 'http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png'
 # cocktail = Cocktail.new(name: 'NES')
 # cocktail.remote_photo_url = url
 # cocktail.save
+
 puts 'Finished!'
