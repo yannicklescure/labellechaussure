@@ -6,7 +6,16 @@
         <% if @product.user == current_user %>
           <%= link_to "Edit", edit_product_path(@product), product: @product, class: "btn btn-outline-secondary"  %>
         <% else %>
-          <%= link_to "Buy now", new_product_purchase_path(@product), class: "btn btn-outline-secondary"  %>
+          <% command = Purchase.find_by(product_id: @product.id) %>
+          <% if command %>
+            <% if command.confirm %>
+              <p>Sold</p>
+            <% else %>
+              <p>Purchased</p>
+            <% end %>
+          <% else %>
+            <%= link_to "Buy now", new_product_purchase_path(@product), class: "btn btn-outline-secondary"  %>
+          <% end %>
         <% end %>
       </div>
       <div class="row m-0">
@@ -15,8 +24,8 @@
         </div>
         <div class="col-6 py-3 px-5">
           <table class="mt-3">
-            <% command = Purchase.where(product_id: @product.id) %>
-            <% unless command.size.positive? %>
+            <%# command = Purchase.find_by(product_id: @product.id) %>
+            <% unless command %>
               <tr>
                 <td width="64"><span class="text-muted">Seller</span></td>
                 <td><%= @product.user.first_name%></td>
@@ -24,7 +33,7 @@
             <% else %>
               <tr>
                 <td><span class="text-muted">Buyer</span></td>
-                <td><%= command[0].user.first_name.capitalize %></td>
+                <td><%= command.user.first_name.capitalize %></td>
               </tr>
             <% end %>
             <tr>

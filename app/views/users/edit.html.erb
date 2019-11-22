@@ -12,16 +12,18 @@ country: nil,
 state: nil,
 zip: nil>
 -->
-<div class="my-5">
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :address_1 %>
-    <%= f.input :address_2 %>
-    <%#= f.input :country %>
-    <%= f.input :country, as: :string %>
-    <%= f.input :state %>
-    <%= f.input :zip %>
-    <%= f.submit class: "btn btn-secondary" %>
-  <% end %>
+<div class="container">
+  <div class="my-5">
+    <%= simple_form_for @user do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :address_1 %>
+      <%= f.input :address_2 %>
+      <%#= f.input :country %>
+      <%= f.input :country, as: :string %>
+      <%= f.input :state %>
+      <%= f.input :zip %>
+      <%= f.submit class: "btn btn-secondary" %>
+    <% end %>
+  </div>
 </div>
