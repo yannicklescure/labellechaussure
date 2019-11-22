@@ -8,8 +8,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    authorize @product
     @similarproduct = policy_scope(Product).where(brand: @product.brand)
+    authorize @product
   end
 
   def new
@@ -32,7 +32,8 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @product.update(product_params)
+    # raise
+    # @product.update(product_params)
     authorize @product
   end
 
@@ -54,12 +55,11 @@ class ProductsController < ApplicationController
   end
 
   def confirm
-    purchase = Purchase.find(params[:id])
-    raise
-    purchase.confirm = true
-    authorize purchase
-    purchase.save
-    # raise
+    @product = Product.find(params[:id])
+    @purchase = Purchase.find(params[:purchase])
+    @purchase.confirm = true
+    authorize @purchase
+    @purchase.save
   end
 
   private
