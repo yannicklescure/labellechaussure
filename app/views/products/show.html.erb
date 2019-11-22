@@ -37,6 +37,9 @@
 
 <div class="row justify-content-start m-3 p-3">
   <% @similarproduct.each do |product| %>
+      <%# raise %>
+      <% next if product.id == params[:id].to_i %>
+
       <div class="col-12 col-md-4 col-lg-3 p-3">
         <div class="card card-transition">
           <img src="<%= product.fake_photo %>" class="card-img-top" alt="<%= product.title %>" style="height: 264px; object-fit: cover">
