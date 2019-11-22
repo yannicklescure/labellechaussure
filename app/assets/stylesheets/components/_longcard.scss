@@ -21,21 +21,34 @@ $card-product-height: 175px;
   object-fit: cover;
 }
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+// .card-product h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
+// .card-product p {
+//   font-size: 12px;
+//   line-height: 1.4;
+//   opacity: .7;
+//   margin-bottom: 0;
+//   margin-top: 8px;
+// }
 
 .card-product .card-product-infos {
   padding: 16px;
   width: calc(100% - 175px);
+}
+
+.card-product-title {
+  width: 100%;
+}
+.card-product-other-infos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-product-purchased {
+  text-align: right;
 }

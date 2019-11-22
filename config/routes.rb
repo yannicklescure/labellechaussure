@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   patch "users/:id", to: "users#update"
   put "users/:id", to: "users#update"
 
+  post "products/:id", to: "products#confirm", as: "confirm_purchases"
+
   get "users/:id", to: "users#index", as: "user_products"
 end

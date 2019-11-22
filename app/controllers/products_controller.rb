@@ -52,9 +52,18 @@ class ProductsController < ApplicationController
     redirect_to user_products_path
   end
 
+  def confirm
+    purchase = Purchase.find(params[:id])
+    raise
+    purchase.confirm = true
+    authorize purchase
+    purchase.save
+    # raise
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :model, :size, :brand, :year, :photo, :color_id)
+    params.require(:product).permit(:title, :description, :price, :model, :size, :brand, :year, :photo, :photo_cache, :color_id)
   end
 end
