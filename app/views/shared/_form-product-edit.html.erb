@@ -1,0 +1,36 @@
+<%= simple_form_for @product do|f| %>
+  <%= f.error_notification %>
+  <div class="mb-3">
+    <%= f.input :title %>
+  </div>
+  <div class="mb-3">
+    <%= f.input :description, as: :text %>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <%= f.input :brand %>
+    </div>
+    <div class="col-md-4 mb-3">
+      <%= f.input :model %>
+    </div>
+    <div class="col-md-4 mb-3">
+      <%= f.input :year, collection: (1955..2019) %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 mb-3">
+      <%= f.association :color, as: :radio_buttons, wrapper: :vertical_collection_inline %>
+    </div>
+    <div class="col-md-4 mb-3">
+      <%= f.input :size, collection: (6..15), input_html: { multiple: true } %>
+    </div>
+  </div>
+  <div class="mb-3">
+    <%= f.input :price %>
+  </div>
+  <div class="mb-3">
+    <%= f.input :photo, label: "Add a photo" %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+    <%= f.button :submit, "Save changes", class: "btn btn-secondary" %>
+<% end %>
