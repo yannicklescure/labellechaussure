@@ -78,7 +78,7 @@ products_attributes = [
     model: 'Adidas x Star_wars',
     year: '2016',
     size: '16',
-    description: 'The force is strong with the new Stars Wars!',
+    description: 'The force is strong with the new Stars Wars!The Lightsaber-themed pack is designed for the players who wear them. Inspired by the unbreakable bond between a Jedi and their lightsaber, the design is highlighted by kyber crystal-themed elements that are featured on each silhouette’s UV midsole. ',
     price: '200',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
@@ -98,11 +98,11 @@ products_attributes = [
   },
   {
     title: 'Kobe shoes',
-    brand: 'Nick',
+    brand: 'Nike',
     model: 'Kobe',
     year: '2017',
     size: '12',
-    description: 'Those shoes were sold in 30 sc',
+    description: 'Those shoes were sold in 30 sc, now is your one an only occasion to buy them! The better a shoe fits, the more you can focus on your speed. The Kobe AD NXT embodies this idea in a basketball shoe, utilising Nike s innovative lacing technology to lock you in with one pull.',
     price: '300',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
@@ -114,7 +114,7 @@ products_attributes = [
     model: 'Cortez',
     year: '2012',
     size: '10',
-    description: 'A classic, in great condition',
+    description: 'A classic, in great condition The Nike Cortez is the first track shoe created by Nike, in 1968.',
     price: '110',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
@@ -126,7 +126,7 @@ products_attributes = [
     model: 'Superstar',
     year: '2017',
     size: '10',
-    description: 'A classic',
+    description: 'A classic. The Superstar is a low-top shoe manufactured by athletic goods company Adidas since 1969. The shoe was originally released as a low-top version of the Pro Model basketball shoe.',
     price: '100',
     color_id: Color.all[1].id,
     user_id: User.all[1].id,
@@ -189,7 +189,7 @@ products_attributes = [
     description: "Remember Kill Bill? This is the classy version of the Tiger Onitsuka. The classic look combined with comfort make it an ultimate casual shoe. The Ultimate 81 from Onitsuka Tiger will be the perfect addition to your wardrobe.",
     price: "120",
     color_id: Color.all[3].id,
-    user_id: User.all[3].id,
+    user_id: User.all[1].id,
     remote_photo_url: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/81BTtY6OzvL._AC_UX695__xbo7qc.jpg"
   },
   {
@@ -198,7 +198,7 @@ products_attributes = [
     model: "Suede Classic",
     year: "1999",
     size: "11",
-    description: "",
+    description: "Puma sponsored African-American athletes Tommie Smith and John Carlos, after having won gold and bronze in the 200 meters respectively.",
     price: "90",
     color_id: Color.all[4].id,
     user_id: User.all[3].id,
@@ -249,9 +249,61 @@ products_attributes = [
     description: "Limited edition of the Fila Disruptor with a twist! Those retro-styled sneakers are making a come back, with many colors!",
     price: "350",
     color_id: Color.all[3].id,
-    user_id: User.all[1].id,
+    user_id: User.all[2].id,
     remote_photo_url: "https://res.cloudinary.com/pierreja/image/upload/v1574445513/FILA-Disruptor-II-Tie-Dye-Shoes-_313256-front-US_jvbxwp_n69tgm.jpg"
   },
+
+ {
+    title: 'Air Jordan',
+    brand: 'Nike',
+    model: 'Air Jordans I,',
+    year: '1985',
+    size: '10',
+    description: 'The Air Jordan I was first produced for Michael Jordan in 1984. It was designed by Peter C. Moore.',
+    price: '500',
+    color_id: Color.all[1].id,
+    user_id: User.all[0].id,
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574451590/Air_Jordan_1_Mid_-_Pine_Green_z3bfgk.jpg'
+  },
+
+  {
+    title: 'Adidas Yeezy Boost 350 V2 ‘Antlia’ (Reflective)',
+    brand: 'Adidas',
+    model: 'Yeezy Boost 350 V2',
+    year: '2019',
+    size: '11',
+    description: 'It is no secret that the Adidas Yeezy Boost 350 V2 has been suffering from a dip in interest, partially due to a bit of oversaturation, but a few of the recent releases have been able to reignite the flame for some. The “Antlia” colorway was a regional exclusive that released in Europe, Russia, and Ukraine earlier this month. Couple its rarity with the fact that it is drenched in reflective material, a detail that was offered in more limited quantities than the non-reflective version, and its attachment to Kanye West',
+    price: '1200',
+    color_id: Color.all[2].id,
+    user_id: User.all[3].id,
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574451508/yeezy-boost-350-v2-antlia-reflective_juwcn6.jpg'
+  },
+{
+    title: 'Jordan 4 Retro Levis Black',
+    brand: 'Levis',
+    model: 'Jordan 4',
+    year: '2017',
+    size: '11',
+    description: 'Combining two of the most recognizable brands in the world, Jordan and Levis came together to execute this beautiful Levi’s x Air Jordan 4 Black. The second release in the collection, this pair is draped in black denim on the upper, waxed laces, and a gum bottom. In addition, the shoe features a red Levis tag on the lateral side and a brown leather patch with a red Jumpman logo on the tongue. ',
+    price: '480',
+    color_id: Color.all[1].id,
+    user_id: User.all[1].id,
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574451838/levis-air-jordan-4-official-look-002_boyfbk.jpg'
+  },
+
+{
+    title: 'Reebok Sock Run',
+    brand: 'Reebok',
+    model: 'Sock Run',
+    year: '2019',
+    size: '9',
+    description: 'Black cotton and leather sock runner sneakers from Reebok featuring a round toe, a ridged rubber sole, a lace-up front fastening and branded heel counter.',
+    price: '200',
+    color_id: Color.all[1].id,
+    user_id: User.all[1].id,
+    remote_photo_url: 'https://res.cloudinary.com/pierreja/image/upload/v1574451894/reebok-sock-run-r-banner_znbm4o.jpg'
+  },
+
 ]
 
 Product.create!(products_attributes)
