@@ -7,12 +7,20 @@
   </button>
 
   <% if user_signed_in? %>
-  <div class="col-12 col-md-4 col-lg-6">
-      <form class="form-inline">
-        <input class="form-control flex-grow-1" type="text" placeholder="What are you looking for?" id="search">
-        <!-- <button type="submit" class="btn btn-secondary">Search</button> -->
-      </form>
-  </div>
+    <% if controller_name == "products" && action_name == "index" %>
+      <div class="col-10 col-md-5 col-lg-5">
+        <%= form_tag(products_path, method: :get, remote: true, class: 'form-inline') do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control flex-grow-1 text-center",
+            placeholder: "What are you looking for?"
+          %>
+          <%= button_tag type: 'submit', class: "btn btn-secondary" do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
