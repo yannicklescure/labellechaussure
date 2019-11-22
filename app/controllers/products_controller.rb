@@ -3,8 +3,9 @@ class ProductsController < ApplicationController
 
   def index
     # @products = Product.all
-    if params[:query].present?
+    if params[:query]
       @search_product = policy_scope(Product).search_product(params[:query])
+      @search_product = policy_scope(Product) if params[:query] == ""
       respond_to do |format|
         format.html
         format.js { render partial: 'search-results' }

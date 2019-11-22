@@ -3,15 +3,17 @@
     <div class="col-12 text-center m-5">
       <h1>La belle chaussure brings <strong>your sneakers collection</strong> to <strong>the next level</strong>!</h1>
     </div>
-    <div class="col-6 form-inline">
-        <%= form_tag(products_path, method: :get, remote: true) do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control flex-grow-1 text-center",
-            placeholder: "What are you looking for?"
-          %>
-          <%= submit_tag "SEARCH", class: "btn btn-secondary" %>
+    <div class="col-4 text-center">
+      <%= form_tag(products_path, method: :get, remote: true, class: 'form-inline') do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control flex-grow-1 text-center",
+          placeholder: "What are you looking for?"
+        %>
+        <%= button_tag type: 'submit', class: "btn btn-secondary" do %>
+        <i class="fa fa-search" aria-hidden="true"></i>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>
