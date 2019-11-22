@@ -1,9 +1,5 @@
-<% unless user_signed_in? %>
-  <%= render "shared/banner" %>
-<% end %>
-<div id="all-cards">
-  <div class="row justify-content-start m-0 p-3">
-    <% @products.each do |product| %>
+<div class="row justify-content-start m-0 p-3">
+    <% @search_product.each do |product| %>
         <div class="col-12 col-md-4 col-lg-3 p-3">
           <div class="card card-transition">
             <img src="<%= product.fake_photo %>" class="card-img-top" alt="<%= product.title %>" style="height: 264px; object-fit: cover">
@@ -23,9 +19,3 @@
       </div>
     <% end %>
   </div>
-</div>
-
-<div id="search-results">
-
-</div>
-
