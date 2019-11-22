@@ -8,21 +8,24 @@
       <div class="col-12 col-lg-10">
         <div class="card-product mb-3 d-flex align-items-start">
           <%= cl_image_tag product.photo, alt: product.title %>
-              <div class="card-product-infos">
-              <div class="">
-                <div class="card-product-title"><p class="h5 py-3 border-bottom"><%= product.title %></p></div>
-                <div class="card-product-other-infos"><p class ="text-secondary">$ <%= product.price %></p>
-                <p class ="text-secondary">Seller: <%= product.user.first_name %></p></div>
+          <div class="card-product-infos">
+            <div class="">
+              <div class="card-product-title"><p class="h5 py-3 border-bottom"><%= product.title %></p></div>
+              <div class="card-product-other-infos"><p class ="text-secondary">$ <%= product.price %></p>
+              <p class ="text-secondary"><em>Seller: <%= product.user.first_name %></em></p></div>
+            </div>
+            <div class="d-flex justify-content-between">
+              <div>
+                <span><%= link_to "cancel", purchase_path(purchase), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-dark btn-sm" %></span>
+                <span><%= link_to "show", purchase_path(purchase), class: "btn btn-outline-dark btn-sm" %></span>
               </div>
               <div>
-                <span><%= link_to "cancel", "#"  %></span>
-                &nbsp;&nbsp;
-                <span><%= link_to "show", purchase_path(purchase)  %></span>
+                <span class="fas fa-check-square" style = "color: green;"><%= purchase.done = "" %></span>
               </div>
-              <p class="card-product-purchased"><%= purchase.done = "test" %></p>
             </div>
+          </div>
         </div>
       </div>
-        <% end %>
+    <% end %>
   </div>
 </div>
