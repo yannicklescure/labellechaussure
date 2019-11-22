@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     authorize @product
+    @similarproduct = policy_scope(Product).where(brand: @product.brand)
   end
 
   def new

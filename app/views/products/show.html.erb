@@ -1,34 +1,70 @@
 
-
-<div class="card m-5 p-3" style="max-width: 1200px">
-  <div class="row">
-    <div class="col-sm-6">
-      <h5 class="card-title"><%= @product.title %></h5>
-    </div>
-  </div>
-<hr>
-  <div class="row justify-content-between">
-    <div class="col-sm-6">
-      <img src="<%= @product.fake_photo %>" class="img" alt="<%= @product.title %>">
-    </div>
-
-    <div class="col-sm-6">
-      <div class="card-body">
-        <p class="card-text small">Model: <strong><%= @product.model%></strong> </p>
-        <p class="card-text small">Brand: <strong><%= @product.brand%></strong></p>
-        <p class="card-text small">Price: <strong><%= @product.price%></strong> </p>
-        <p class="card-text small">Description: <strong><%= @product.description %></strong>  </p>
-        <p class="card-text small">Year:<strong><%= @product.year%></strong> </p>
-        <p class="card-text small">User: <strong><%= @product.user_id%></strong> </p>
-        <p class="card-text small">Color: <strong><%= @product.color_id%></strong> </p>
-        <p class="card-text small"> Size: <strong><%= @product.size%></strong> </p>
-
-<div class="row justify-content-center">
-      <%= link_to "Buy now", new_product_purchase_path(@product), class: "btn btn-secondary"  %>
-
-</div>
+  <div class="row justify-content-center m-0 mt-5">
+    <div class="col-12 px-3">
+      <div class="card bg-white">
+        <div class="row m-0 p-3 border-bottom align-items-center justify-content-between">
+          <h5 class="card-title m-0"><%= @product.title %></h5>
+          <%= link_to "Buy now", new_product_purchase_path(@product), class: "btn btn-outline-secondary"  %>
+        </div>
+        <div class="row m-0">
+          <div class="col-6 p-3">
+            <img src="<%= @product.photo %>" class="img" alt="<%= @product.title %>">
+          </div>
+          <div class="col-6 py-3 px-5">
+            <ul class="list-unstyled">
+              <li>Model: <strong><%= @product.model%></strong> </li>
+              <li>Brand: <strong><%= @product.brand%></strong></li>
+              <li>Price: <strong><%= @product.price%></strong> </li>
+              <li>Year:<strong><%= @product.year%></strong> </li>
+              <li>User: <strong><%= @product.user_id%></strong> </li>
+              <li>Color: <strong><%= @product.color_id%></strong> </li>
+              <li> Size: <strong><%= @product.size%></strong> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row m-0 p-3">
+          <div class="col">
+            <p><span class="text-muted">Description:</span><br><%= @product.description %></p>
+          </div>
+        </div>
       </div>
     </div>
-      <%= link_to "Back", root_path, class: "btn btn-link" %>
   </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-12">
+      <h5 class="p-3">Other sneakers you may like</h5>
+      <div class="row m-0">
+        <% @similarproduct.each do |product| %>
+            <%# raise %>
+            <% next if product.id == params[:id].to_i %>
+
+            <div class="col-12 col-md-4 col-lg-3 p-3">
+              <div class="card card-transition">
+                <img src="<%= product.fake_photo %>" class="card-img-top" alt="<%= product.title %>" style="height: 264px; object-fit: cover">
+                <div class="card-body p-3">
+                  <div class="d-flex justify-content-between align-items-end">
+                    <div class="card-text">
+                      <p class="h6 m-0"><%= link_to truncate(product.title, 25), product_path(product), class: 'stretched-link text-body text-decoration-none' %></p>
+                      <p class="m-0 text-secondary">$ <%= product.price %></p>
+                    </div>
+                    <div class="card-text">
+                      <i class="far fa-heart text-secondary"></i>
+                      <i class="fas fa-heart text-danger"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="row justify-content-start m-3 p-3">
+
 </div>
+
+
