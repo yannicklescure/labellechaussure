@@ -1,1 +1,6 @@
+
+cards = document.querySelector("#all-cards");
+cards.style.display = 'none';
+cards = document.querySelector("#search-results");
+cards.style.display = 'block';
 $("#search-results").html("<%= j render 'products/results', search_product: @search_product %>");
