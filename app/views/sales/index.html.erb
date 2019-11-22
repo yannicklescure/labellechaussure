@@ -1,34 +1,28 @@
 <div class="container py-3" >
-  <!-- <h1>Sales#index</h1> -->
-  <!-- <p>Find me in app/views/sales/index.html.erb</p> -->
   <div class="row justify-content-center">
     <% @sales.reverse.each do |product| %>
       <% if policy(product).show? %>
-        <% command = Purchase.where(product_id: product.id) %>
+        <% command = Purchase.find_by(product_id: product.id) %>
         <div class="col-12 col-lg-10">
           <div class="card-product mb-3 d-flex align-items-start">
             <%= cl_image_tag product.photo, alt: product.title, class:"p-2" %>
             <div class="card-product-infos">
-              <div class="h5 py-3 border-bottom"><%= product.title %></div>
+              <div class="row m-0 align-items-center justify-content-between border-bottom py-3 mb-3">
+                <div class="h5 m-0"><%= product.title %></div>
+                <%= link_to "See details", product_path(product), class: 'btn btn-sm btn-link text-muted' %>
+              </div>
               <div class="d-flex justify-content-between align-items-center">
-                <p class ="text-secondary">$ <%= product.price %></p>
-                <% if command.size.positive? %>
-                  <% user = User.find(command[0].user.id) %>
-                  <%# raise if command.size.positive? %>
-                  <!-- <p>purchase done?: <%= command.size.positive? ? command[0].done : false %></p> -->
-                  <%# if command.size.positive? && command[0].confirm %>
-                    <!-- <p>status confirmed <i class="fas fa-check"></i></p> -->
-                  <%# else %>
-                  <% unless command[0].confirm %>
-                    <div>
-                      <%= link_to "valid", product_path(command), method: :confirm %>
-                      <span class="text-success"><i class="fas fa-truck-loading"></i> valid</span>
-                      &nbsp;/&nbsp;
-                      <span class="text-danger"><i class="fas fa-truck-loading"></i> reject</span>
+                <span class ="text-secondary">$ <%= product.price %></span>
+                <% if command %>
+                  <% user = User.find(command.user.id) %>
+                  <% if command.confirm %>
+                    <span class="text-muted">Confirmed</span>
+                  <% else %>
+                    <div id="product-id-<%= product.id %>">
+                      <%= link_to "valid sale", "#{product_path(product)}?purchase=#{command.id}", remote: true, method: :post, class: 'btn btn-sm btn-info' %>
                     </div>
-                   <% end %>
-                  <p class="text-muted"><%= raw("<i class=\"fas fa-user-alt\"></i> #{user.first_name}") %></p>
-                  <%# end %>
+                  <% end %>
+                  <span class="text-right text-muted"><%= raw("Buyer: #{user.first_name.capitalize}") %></span>
                 <% end %>
               </div>
             </div>

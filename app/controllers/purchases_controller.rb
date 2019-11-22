@@ -7,6 +7,7 @@ class PurchasesController < ApplicationController
 
   def show
     @purchase = Purchase.find(params[:id])
+    @similarproduct = policy_scope(Product).where(brand: @purchase.product.brand)
     authorize @purchase
   end
 
