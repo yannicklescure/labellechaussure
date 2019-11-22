@@ -178,7 +178,7 @@ products_attributes = [
     price: "75",
     color_id: Color.all[2].id,
     user_id: User.all[1].id,
-    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/https___hypebeast.com_image_2019_11_asics-gel-1090-silver-steel-grey-1021A285-100-release-date-1_urtehv.jpg"
+    remote_photo_url: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/https___hypebeast.com_image_2019_11_asics-gel-1090-silver-steel-grey-1021A285-100-release-date-1_urtehv.jpg"
   },
   {
     title: "ASICS Onitsuka Tiger Ultimate 81 Baskets",
@@ -190,7 +190,7 @@ products_attributes = [
     price: "120",
     color_id: Color.all[3].id,
     user_id: User.all[3].id,
-    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/81BTtY6OzvL._AC_UX695__xbo7qc.jpg"
+    remote_photo_url: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/81BTtY6OzvL._AC_UX695__xbo7qc.jpg"
   },
   {
     title: "Fantastic PUMA Suede Classic",
@@ -202,7 +202,7 @@ products_attributes = [
     price: "90",
     color_id: Color.all[4].id,
     user_id: User.all[3].id,
-    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/352634_03_sv01_rlba6f.jpg"
+    remote_photo_url: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/352634_03_sv01_rlba6f.jpg"
   },
   {
     title: "Good condition Puma Tazon 6 FM ",
@@ -214,7 +214,7 @@ products_attributes = [
     price: "80",
     color_id: Color.all[2].id,
     user_id: User.all[3].id,
-    photo: "https://res.cloudinary.com/sophiealexandre/image/upload/v1574443559/sneakers/60076-63_jglexr.png"
+    remote_photo_url: "https://res.cloudinary.com/sophiealexandre/image/upload/v1574443559/sneakers/60076-63_jglexr.png"
   },
   {
     title: "Fila Disruptor II platform wedge sneakers for men",
@@ -226,7 +226,7 @@ products_attributes = [
     price: "350",
     color_id: Color.all[3].id,
     user_id: User.all[2].id,
-    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/36df44281d46ea16cccb84af1f9ad2ba_nzf3ly.jpg"
+    remote_photo_url: "https://res.cloudinary.com/pierreja/image/upload/v1574445628/36df44281d46ea16cccb84af1f9ad2ba_nzf3ly.jpg"
   },
   {
     title: "V-RUN Mens North Sea Navy",
@@ -238,7 +238,7 @@ products_attributes = [
     price: "100",
     color_id: Color.all[1].id,
     user_id: User.all[0].id,
-    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445565/Vibram_Fivefingers_V-Run_Mens_North_Sea_Navy_1024x1024_uytolm_yp8llu.jpg"
+    remote_photo_url: "https://res.cloudinary.com/pierreja/image/upload/v1574445565/Vibram_Fivefingers_V-Run_Mens_North_Sea_Navy_1024x1024_uytolm_yp8llu.jpg"
   },
   {
     title: "Fila Disruptor II platform Rainbow",
@@ -250,7 +250,7 @@ products_attributes = [
     price: "350",
     color_id: Color.all[3].id,
     user_id: User.all[1].id,
-    photo: "https://res.cloudinary.com/pierreja/image/upload/v1574445513/FILA-Disruptor-II-Tie-Dye-Shoes-_313256-front-US_jvbxwp_n69tgm.jpg"
+    remote_photo_url: "https://res.cloudinary.com/pierreja/image/upload/v1574445513/FILA-Disruptor-II-Tie-Dye-Shoes-_313256-front-US_jvbxwp_n69tgm.jpg"
   },
 ]
 
