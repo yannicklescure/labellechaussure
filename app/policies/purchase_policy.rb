@@ -28,6 +28,13 @@ class PurchasePolicy < ApplicationPolicy
     user_is_owner?
   end
 
+  def confirm?
+    # raise
+    # user_is_owner? || user.admin
+    # user_is_owner?
+    true
+  end
+
   private
 
   def user_is_owner?

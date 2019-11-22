@@ -1,30 +1,40 @@
-<div class="container" >
+<div class="container py-3" >
   <!-- <h1>Sales#index</h1> -->
   <!-- <p>Find me in app/views/sales/index.html.erb</p> -->
-  <hr>
   <div class="row justify-content-center">
     <% @sales.reverse.each do |product| %>
       <% if policy(product).show? %>
-      <% command = Purchase.where(product_id: product.id) %>
-
-  <div class="card-product mb-3 p-0 col-10 col-lg-8">
-    <%= cl_image_tag "product.photo", alt: product.title %>
-    <div class="card-product-infos p-3">
-      <div class="h3"><%= product.title %></div>
-      <hr>
-      <span class ="h3"><span><i class="fas fa-dollar-sign"></i></span><%= product.price %></span>
-      <span><span class="h5"><i class="far fa-user"></i></span> <%= command.size.positive? ? command[0].user.id : 'no one' %></span>
-      <!-- <p>purchase done?: <%= command.size.positive? ? command[0].done : false %></p> -->
-      <% if command.size.positive? && command[0].confirm %>
-        <p>confirmed: <i class="fas fa-check"></i></p>
-      <% else %>
-        <p>confirmed: <i class="fas fa-truck-loading"></i></p>
+        <% command = Purchase.where(product_id: product.id) %>
+        <div class="col-12 col-lg-10">
+          <div class="card-product mb-3 d-flex align-items-start">
+            <%= cl_image_tag product.photo, alt: product.title, class:"p-2" %>
+            <div class="card-product-infos">
+              <div class="h5 py-3 border-bottom"><%= product.title %></div>
+              <div class="d-flex justify-content-between align-items-center">
+                <p class ="text-secondary">$ <%= product.price %></p>
+                <% if command.size.positive? %>
+                  <% user = User.find(command[0].user.id) %>
+                  <%# raise if command.size.positive? %>
+                  <!-- <p>purchase done?: <%= command.size.positive? ? command[0].done : false %></p> -->
+                  <%# if command.size.positive? && command[0].confirm %>
+                    <!-- <p>status confirmed <i class="fas fa-check"></i></p> -->
+                  <%# else %>
+                  <% unless command[0].confirm %>
+                    <div>
+                      <%= link_to "valid", product_path(command), method: :confirm %>
+                      <span class="text-success"><i class="fas fa-truck-loading"></i> valid</span>
+                      &nbsp;/&nbsp;
+                      <span class="text-danger"><i class="fas fa-truck-loading"></i> reject</span>
+                    </div>
+                   <% end %>
+                  <p class="text-muted"><%= raw("<i class=\"fas fa-user-alt\"></i> #{user.first_name}") %></p>
+                  <%# end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
-  <% end %>
-<% end %>
 </div>
-</div>
-
-<strong></strong>
